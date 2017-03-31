@@ -90,7 +90,7 @@
         flex:3;
         padding: 1rem;
         .title{
-          font-size: 1rem;
+          font-size: 1.2rem;
           color: white;
         }
         .content{

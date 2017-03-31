@@ -217,8 +217,6 @@ export default {
   display: flex;
   background: #47A3DA;
   box-shadow: 1px 1px 1px 0 #eaeaea;
-  position: relative;
-  z-index: 2;
   .nav{
     display: inline-block;
     flex:1;

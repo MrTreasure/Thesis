@@ -21,9 +21,9 @@ export default {
   data () {
     return {
       swiperOption: {
-        autoPlay: 2000,
+        autoPlay: 500,
         direction: 'horizontal',
-        grabCursor: true,
+        // grabCursor: true,
         setWrapperSize: true,
         pagination: '.swiper-pagination',
         paginationClickable: true,

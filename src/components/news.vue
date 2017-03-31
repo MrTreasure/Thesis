@@ -67,7 +67,7 @@
 <style lang="scss" scoped>
  .news{
    margin-top: 1rem;
-   background: white;
+   background: rgba(255,255,255,0.9);
    width: 47%;
    min-height: 200px;
    padding: 0.5rem;

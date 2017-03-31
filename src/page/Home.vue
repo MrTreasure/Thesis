@@ -9,7 +9,7 @@
         <h1 class="title">信息科学与工程学院</h1>
       </div>
     </div>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper" ref="myNav">
       <navigation></navigation>
     </div>
     <router-view></router-view>
@@ -26,7 +26,13 @@ export default {
   name: 'home',
   data () {
     return {
-      time: ''
+      time: '',
+      nav: {}
+    }
+  },
+  computed: {
+    top () {
+      return this.nav.offsetTop;
     }
   },
   created () {
@@ -37,6 +43,24 @@ export default {
   components: {
     navigation,
     foot
+  },
+  mounted () {
+    this.nav = this.$refs.myNav;
+    // console.log(this.top);
+    window.addEventListener('scroll', this.fixedNav);
+  },
+  methods: {
+    fixedNav () {
+      this.$nextTick(() => {
+        let top = document.body.scrollTop;
+        if (top >= this.top) {
+          this.nav.className = 'fix';
+        }
+        if (top < this.top) {
+          this.nav.className = 'nav-wrapper';
+        }
+      });
+    }
   }
 }
 </script>
@@ -44,7 +68,7 @@ export default {
 <style lang="scss">
 @import '~assets/scss/colors.scss';
 body{
-  background: url(~assets/img/bg3.jpg);
+  background: url(~assets/img/bg2.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
 }
@@ -88,6 +112,15 @@ body{
   .nav-wrapper{
     margin: 0 auto;
     width: 80%;
+    position: relative;
+    z-index: 99;
+  }
+  .fix{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
   }
   .foot-wrapper{
     width: 80%;
