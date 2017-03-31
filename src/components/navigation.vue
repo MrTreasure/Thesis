@@ -217,11 +217,14 @@ export default {
   display: flex;
   background: #47A3DA;
   box-shadow: 1px 1px 1px 0 #eaeaea;
+  position: relative;
+  z-index: 2;
   .nav{
     display: inline-block;
     flex:1;
     height: 3rem;
     text-align: center;
+    cursor: pointer;
     .name{
       margin-top: 0.25rem;
       display: inline-block;

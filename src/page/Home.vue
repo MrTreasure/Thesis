@@ -12,14 +12,16 @@
     <div class="nav-wrapper">
       <navigation></navigation>
     </div>
-  <router-view></router-view>
-  <div class="footer">
-  </div>
+    <router-view></router-view>
+    <div class="foot-wrapper">
+      <foot></foot>
+    </div>
   </div>
 </template>
 
 <script>
 import navigation from 'components/navigation';
+import foot from 'components/foot';
 export default {
   name: 'home',
   data () {
@@ -33,7 +35,8 @@ export default {
     }, 1000);
   },
   components: {
-    navigation
+    navigation,
+    foot
   }
 }
 </script>
@@ -41,7 +44,8 @@ export default {
 <style lang="scss">
 @import '~assets/scss/colors.scss';
 body{
-  background: url(~assets/img/bg.jpg) 100% 100%;
+  background: url(~assets/img/bg3.jpg);
+  background-size: 100% 100%;
   background-attachment: fixed;
 }
 .top{
@@ -84,6 +88,10 @@ body{
   .nav-wrapper{
     margin: 0 auto;
     width: 80%;
+  }
+  .foot-wrapper{
+    width: 80%;
+    margin: 2rem auto 0;
   }
 }
 </style>
