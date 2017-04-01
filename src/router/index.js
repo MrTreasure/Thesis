@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from 'page/Home';
 import begin from 'page/begin';
 import CduNews from 'page/CduNews';
+import NotFoundComponent from 'page/404';
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
           name: 'news'
         }
       ]
+    },
+    {
+      path: '*',
+      component: NotFoundComponent
     }
   ]
 })

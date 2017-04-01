@@ -27,7 +27,7 @@
               from: '教师组 洪雪维',
               date: '2017-03-31',
               vip: true,
-              url: ''
+              url: Number
             },
             {
               title: '四川民族学院计算机科学系到我院学习考察',
