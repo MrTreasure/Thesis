@@ -212,7 +212,9 @@ export default {
   },
   methods: {
     firstRoute (index) {
-      console.log(index);
+      if (index === 0) {
+        this.$router.push({name: 'begin'});
+      }
       if (this.navList[index].url) {
         this.$router.push(this.navList[index].url);
       }
