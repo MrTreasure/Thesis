@@ -3,6 +3,7 @@ import Router from 'vue-router';
 // pages
 import Home from 'page/Home';
 import begin from 'page/begin';
+import CduNews from 'page/CduNews';
 
 Vue.use(Router)
 
@@ -15,7 +16,13 @@ export default new Router({
       children: [
         {
           path: '',
-          component: begin
+          component: begin,
+          name: 'begin'
+        },
+        {
+          path: '/news',
+          component: CduNews,
+          name: 'news'
         }
       ]
     }

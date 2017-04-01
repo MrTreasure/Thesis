@@ -1,6 +1,6 @@
 <template>
   <ul class="navigation">
-    <li class="nav" v-for="nav in navList">
+    <li class="nav" v-for="(nav, index) in navList" @click="firstRoute(index)">
         <span class="name">{{nav.name}}</span>
       <ul class="child-nav">
         <li class="child-nav-item" v-for="item in nav.items">
@@ -19,11 +19,13 @@ export default {
       navList: [
         {
           name: '首页',
+          url: '',
           items: [
           ]
         },
         {
           name: '学院概况',
+          url: 'home',
           items: [
             {
               title: '学院简介',
@@ -207,6 +209,17 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    firstRoute (index) {
+      console.log(index);
+      if (this.navList[index].url) {
+        this.$router.push(this.navList[index].url);
+      }
+    },
+    secondRoute () {
+
+    }
   }
 }
 </script>
@@ -235,11 +248,12 @@ export default {
       transition: all .5s;
     }
     &:hover{
-      background: white;
+      background: #00BFFF;
 
     }
     &:hover .name{
-      color: #47A3DA;
+      // color: #47A3DA;
+      color: white;
       border: none;
     }
     &:hover .child-nav{
@@ -251,18 +265,25 @@ export default {
         // width: 100%;
         height: 2rem;
         text-align: center;
-        background: white;
+        background: #00BFFF;
+        &:hover{
+          background: white;
+        }
         a{
           padding: 0.25rem;
           text-decoration: none;
-          color: #47A3DA;
+          color: white;
           line-height: 2rem;
           border-top: 1px solid #eaeaea;
+          box-sizing: border-box;
           &:hover{
-            background: #47A3DA;
-            color: white;
+            // background: #47A3DA;
+            color: #00BFFF;
             border-radius: 2px;
           }
+          // &:hover a + a {
+          //   border: none;
+          // }
         }
         &:first-child a{
           border: none;

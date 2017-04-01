@@ -1,7 +1,7 @@
 <template>
   <div class="news">
     <div class="head">
-      <span class="title">{{news.name}}</span><a class="more">更多</a>
+      <span class="title">{{news.name}}</span><a class="more" @click="more">更多</a>
     </div>
     <div class="content">
       <div class="new-item" v-for="item in news.newList" :title="`来源：${item.from}`">
@@ -20,7 +20,7 @@
         type: Object,
         default: {
           name: '学院新闻',
-          url: '',
+          url: 'news',
           newList: [
             {
               title: '罗波书记到我院进行调研工作',
@@ -60,6 +60,11 @@
           ]
         }
       }
+    },
+    methods: {
+      more () {
+        this.$router.push(this.news.url);
+      }
     }
   }
 </script>
@@ -88,6 +93,10 @@
        display: inline-block;
        margin-left: 0.5rem;
        color: #47A3DA;
+       cursor: pointer;
+       &:hover{
+         color: black;
+       }
      }
    }
    .content{

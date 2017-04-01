@@ -86,6 +86,9 @@ body{
   }
 }
 .home{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .header{
     background: $blue1;
     margin: 0 auto;

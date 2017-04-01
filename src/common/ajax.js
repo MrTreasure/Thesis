@@ -30,25 +30,25 @@ const request = (method, url, data, config = {}) => {
 };
 
 export const ajax = {
-  get(url, config) {
+  get (url, config) {
     return request('get', url, null, config);
   },
-  delete(url, config) {
+  delete (url, config) {
     return request('delete', url, null, config);
   },
-  head(url, config) {
+  head (url, config) {
     return request('head', url, null, config);
   },
-  post(url, data, config) {
+  post (url, data, config) {
     return request('post', url, data, config);
   },
-  put(url, data, config) {
+  put (url, data, config) {
     return request('put', url, data, config);
   },
-  patch(url, data, config) {
+  patch (url, data, config) {
     return request('path', url, data, config);
   },
-  setCommonHeader(key, value) {
+  setCommonHeader (key, value) {
     window.axios.defaults.headers.common[key] = value;
   }
 };
