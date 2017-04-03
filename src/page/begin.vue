@@ -36,15 +36,13 @@
     computed: {
       newsList () {
         let arr = [];
-
+        // 数据结构存在问题
         if (this.urlList[0].items.length !== 0) {
-          console.log(this.urlList[0].items);
           for (let item of this.urlList) {
             let obj = {};
             obj.name = item.name;
             obj.url = 'news';
             obj.newList = [];
-            console.log('go here');
             for (let item2 of this.urlList.items) {
               let obj2 = {};
               obj2.title = item2.title;
