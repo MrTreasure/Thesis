@@ -4,9 +4,9 @@
 
 <script>
   export default {
-
+    name: 'news-detail'
   }
 </script>
 
-<style>
+<style lang="scss">
 </style>
