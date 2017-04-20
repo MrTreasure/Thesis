@@ -2,7 +2,6 @@ const express = require('express');
 let router = express.Router();
 let data = require('../data.js');
 router.get('/data/newsAll',(req, res) => {
-  console.log(req.query);
   res.json(data);
 });
 router.get('/data/news/:id?', (req, res) => {

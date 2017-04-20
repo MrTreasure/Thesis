@@ -4,15 +4,16 @@
       <span class="title">{{news.name}}</span><a class="more" @click="more">更多</a>
     </div>
     <div class="content">
-      <div class="new-item" v-for="item in news.newList" :title="`来源：${item.from}`">
+      <div class="new-item" v-for="item in newList" :title="`来源：${item.from}`">
         <span class="title" :class="{vip: item.vip}">{{item.title}}</span>
-        <span class="time">{{item.date}}</span>
+        <span class="time">{{item.date | formdate}}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import { ajax } from 'common';
   export default {
     name: 'news',
     props: {
@@ -20,50 +21,33 @@
         type: Object,
         default: {
           name: '学院新闻',
-          url: 'news',
-          newList: [
-            {
-              title: '罗波书记到我院进行调研工作',
-              from: '教师组 洪雪维',
-              date: '2017-03-31',
-              vip: true,
-              url: Number
-            },
-            {
-              title: '四川民族学院计算机科学系到我院学习考察',
-              from: '教师组 洪雪维',
-              date: '2017-03-31',
-              vip: false,
-              url: ''
-            },
-            {
-              title: '我院信息处理与工程教学中心获批省级立项建设',
-              from: '教师组 洪雪维',
-              date: '2017-03-31',
-              vip: true,
-              url: ''
-            },
-            {
-              title: '图书馆到我院调研',
-              from: '教师组 洪雪维',
-              date: '2017-03-31',
-              vip: true,
-              url: ''
-            },
-            {
-              title: '信息科学与工程学院岗位选聘考核答辩顺利结束',
-              from: '教师组 洪雪维',
-              date: '2017-03-31',
-              vip: true,
-              url: ''
-            }
-          ]
+          path: 'newsAll',
+          url: 'http://localhost:8080/data/newsAll'
         }
       }
     },
+    data () {
+      return {
+        newList: []
+      }
+    },
+    created () {
+      this.getData();
+    },
     methods: {
       more () {
-        this.$router.push(this.news.url);
+        this.$router.push(this.news.path);
+      },
+      getData () {
+        ajax.get(this.news.url)
+        .then(res => {
+          this.newList = Object.assign([], res);
+        })
+      }
+    },
+    filters: {
+      formdate (date) {
+        return date.slice(0, 10);
       }
     }
   }

@@ -11,6 +11,7 @@
     computed: {
       url () {
         let url = (this.$route.fullPath).replace('/', '');
+        console.log(url);
         return route[url];
       },
       param () {

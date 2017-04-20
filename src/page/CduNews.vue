@@ -67,6 +67,9 @@
         .then(data => {
           this.newsList = Object.assign([], data);
         });
+      },
+      go () {
+
       }
     },
     filters: {
