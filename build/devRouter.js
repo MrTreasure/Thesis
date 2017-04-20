@@ -8,7 +8,7 @@ router.get('/data/news/:id?', (req, res) => {
   console.log(req.query)
   let flag = true;
   for (item of data) {
-    if (req.query.id === item.id) {
+    if (req.query.id == item.id) {
       flag = false;
       res.json(item);
     }

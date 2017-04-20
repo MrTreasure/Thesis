@@ -4,7 +4,7 @@
       <span class="title">{{news.name}}</span><a class="more" @click="more">更多</a>
     </div>
     <div class="content">
-      <div class="new-item" v-for="item in newList" :title="`来源：${item.from}`">
+      <div class="new-item" v-for="item in newList" :title="`来源：${item.from}`" @click="go(item)">
         <span class="title" :class="{vip: item.vip}">{{item.title}}</span>
         <span class="time">{{item.date | formdate}}</span>
       </div>
@@ -43,6 +43,9 @@
         .then(res => {
           this.newList = Object.assign([], res);
         })
+      },
+      go (item) {
+        this.$router.push({name: 'newsDetail', params: {id: item.id}})
       }
     },
     filters: {

@@ -1,11 +1,11 @@
 <template>
   <div class="cdu-news">
-    <location></location>
+    <location :navs="navs"></location>
     <div class="content">
       <div class="left">
         <ul class="articals">
-          <li class="artical" v-for="(item, index) in newsList">
-            <div class="title" :class="{red: item.vip}" @click="go">
+          <li class="artical" v-for="(item, index) in newsList" @click="go(item)">
+            <div class="title" :class="{red: item.vip}">
               {{item.title}}<span class="new" v-if="item.fresh"></span><span class="top" v-if="item.top"></span>
             </div>
             <div class="date">
@@ -33,6 +33,13 @@
     name: 'cdu-news',
     data () {
       return {
+        navs: [
+          {
+            name: '学院新闻',
+            path: 'CduNews',
+            click: false
+          }
+        ],
         url: 'http://localhost:8080/data/newsAll',
         newsList: [],
         picList: [
@@ -68,8 +75,8 @@
           this.newsList = Object.assign([], data);
         });
       },
-      go () {
-
+      go (item) {
+        this.$router.push({name: 'newsDetail', params: {id: item.id}});
       }
     },
     filters: {

@@ -1,24 +1,19 @@
 <template>
   <div class="location">
-    <span class="first box" @click="go">首页</span>/<span class="second box" @click="goNext" :class="{usable: hasUrl}">{{this.url}}</span>
+    <span class="first box" @click="go">首页</span>
+    <span class="box" :class="{usable: nav.click}" v-for="nav in navs" @click="goNext(nav)"><span class="split">/</span>{{nav.name}}</span>
   </div>
 </template>
 
 <script>
-  import { route } from 'common/route';
   export default {
     name: 'location',
-    computed: {
-      url () {
-        let url = (this.$route.fullPath).replace('/', '');
-        console.log(url);
-        return route[url];
-      },
-      param () {
-        return this.$route.param
-      },
-      hasUrl () {
-        return (this.param === '');
+    props: {
+      navs: {
+        type: Array,
+        default () {
+          return []
+        }
       }
     },
     methods: {
@@ -26,9 +21,9 @@
         this.$router.push({name: 'begin'});
         console.log(this.url);
       },
-      goNext () {
-        if (this.hasUrl) {
-          this.$router.push({name: 'news'});
+      goNext (nav) {
+        if (nav.click) {
+          this.$router.push({name: nav.path});
         }
       }
     }
@@ -46,6 +41,9 @@
       padding-right: 0.5rem;
       text-align: center;
       color: black;
+    }
+    .split{
+      margin-right: 1rem;
     }
     .first{
       cursor:pointer;

@@ -19,7 +19,7 @@ export default {
       navList: [
         {
           name: '首页',
-          url: '',
+          url: '##',
           items: [
           ]
         },
@@ -29,15 +29,15 @@ export default {
           items: [
             {
               title: '学院简介',
-              url: ''
+              url: '##'
             },
             {
               title: '机构设置',
-              url: ''
+              url: '##'
             },
             {
               title: '专业设置',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -46,15 +46,15 @@ export default {
           items: [
             {
               title: '人才需求',
-              url: ''
+              url: '##'
             },
             {
               title: '教授介绍',
-              url: ''
+              url: '##'
             },
             {
               title: '特聘人才',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -63,19 +63,19 @@ export default {
           items: [
             {
               title: '教务信息',
-              url: ''
+              url: '##'
             },
             {
               title: '教学文件',
-              url: ''
+              url: '##'
             },
             {
               title: '质量工程',
-              url: ''
+              url: '##'
             },
             {
               title: '人才培养',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -84,15 +84,15 @@ export default {
           items: [
             {
               title: '科研动态',
-              url: ''
+              url: '##'
             },
             {
               title: '科研平台',
-              url: ''
+              url: '##'
             },
             {
               title: '科研团队',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -101,11 +101,11 @@ export default {
           items: [
             {
               title: '合作办学',
-              url: ''
+              url: '##'
             },
             {
               title: '地方服务',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -114,27 +114,27 @@ export default {
           items: [
             {
               title: '思政教育',
-              url: ''
+              url: '##'
             },
             {
               title: '评优评奖',
-              url: ''
+              url: '##'
             },
             {
               title: '学生资助',
-              url: ''
+              url: '##'
             },
             {
               title: '学生就业',
-              url: ''
+              url: '##'
             },
             {
               title: '团学活动',
-              url: ''
+              url: '##'
             },
             {
               title: '管理文件',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -143,15 +143,15 @@ export default {
           items: [
             {
               title: '创业工作室',
-              url: ''
+              url: '##'
             },
             {
               title: '创业动态',
-              url: ''
+              url: '##'
             },
             {
               title: '学科竞赛',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -160,11 +160,11 @@ export default {
           items: [
             {
               title: '研究生工作',
-              url: ''
+              url: '##'
             },
             {
               title: '学科动态',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -173,11 +173,11 @@ export default {
           items: [
             {
               title: '实验室建设',
-              url: ''
+              url: '##'
             },
             {
               title: '实习实训',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -186,11 +186,11 @@ export default {
           items: [
             {
               title: '党组织结构',
-              url: ''
+              url: '##'
             },
             {
               title: '工会工作',
-              url: ''
+              url: '##'
             }
           ]
         },
@@ -199,11 +199,11 @@ export default {
           items: [
             {
               title: '校友风采',
-              url: ''
+              url: '##'
             },
             {
               title: '毕业生风采',
-              url: ''
+              url: '##'
             }
           ]
         }
@@ -216,7 +216,7 @@ export default {
         this.$router.push({name: 'begin'});
       }
       if (this.navList[index].url) {
-        this.$router.push(this.navList[index].url);
+        // this.$router.push(this.navList[index].url);
       }
     },
     secondRoute () {
