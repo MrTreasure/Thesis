@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from 'page/Home';
 import begin from 'page/begin';
 import CduNews from 'page/CduNews';
+import NewsDetail from 'page/NewsDetail';
 import NotFoundComponent from 'page/404';
 
 Vue.use(Router)
@@ -21,9 +22,14 @@ export default new Router({
           name: 'begin'
         },
         {
-          path: '/news',
+          path: '/newsAll',
           component: CduNews,
-          name: 'news'
+          name: 'newsAll'
+        },
+        {
+          path: '/news/:id',
+          component: NewsDetail,
+          name: 'newsDetail'
         }
       ]
     },
