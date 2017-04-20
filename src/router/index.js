@@ -5,6 +5,7 @@ import Home from 'page/Home';
 import begin from 'page/begin';
 import CduNews from 'page/CduNews';
 import NewsDetail from 'page/NewsDetail';
+import Introduction from 'page/Introduction';
 import NotFoundComponent from 'page/404';
 
 Vue.use(Router)
@@ -30,6 +31,11 @@ export default new Router({
           path: '/news/:id',
           component: NewsDetail,
           name: 'newsDetail'
+        },
+        {
+          path: '/Introduction',
+          component: Introduction,
+          name: 'Introduction'
         }
       ]
     },

@@ -3,7 +3,7 @@
     <li class="nav" v-for="(nav, index) in navList" @click="firstRoute(index)">
         <span class="name">{{nav.name}}</span>
       <ul class="child-nav">
-        <li class="child-nav-item" v-for="item in nav.items">
+        <li class="child-nav-item" v-for="item in nav.items" @clcik="secondRoute(item)">
           <a :href="item.url">{{item.title}}</a>
         </li>
       </ul>
@@ -29,7 +29,7 @@ export default {
           items: [
             {
               title: '学院简介',
-              url: '##'
+              url: 'Introduction'
             },
             {
               title: '机构设置',
@@ -215,12 +215,9 @@ export default {
       if (index === 0) {
         this.$router.push({name: 'begin'});
       }
-      if (this.navList[index].url) {
-        // this.$router.push(this.navList[index].url);
-      }
     },
-    secondRoute () {
-
+    secondRoute (item) {
+      this.$router.push({name: item.url});
     }
   }
 }
