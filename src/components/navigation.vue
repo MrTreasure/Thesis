@@ -33,11 +33,11 @@ export default {
             },
             {
               title: '机构设置',
-              url: '##'
+              url: 'CduSet'
             },
             {
               title: '专业设置',
-              url: '##'
+              url: 'CduMajor'
             }
           ]
         },

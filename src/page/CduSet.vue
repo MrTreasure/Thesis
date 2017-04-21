@@ -1,5 +1,5 @@
 <template>
-  <div class="introduction">
+  <div class="cdu-set">
     <location :navs="navs"></location>
     <div class="content" v-html="content"></div>
   </div>
@@ -9,7 +9,7 @@
   import location from 'components/location';
   import { ajax } from 'common';
   export default {
-    name: 'introduction',
+    name: 'cdu-set',
     data () {
       return {
         navs: [
@@ -18,41 +18,36 @@
             click: false
           },
           {
-            name: '学院简介',
+            name: '机构设置',
             click: false
           }
         ],
-        url: 'http://localhost:8080/data/info?name=introduction',
-        content: ``
+        content: '',
+        url: 'http://localhost:8080/data/info?name=set'
       }
     },
     created () {
       this.getData();
-      document.title = '学院简介';
+      document.title = '机构设置';
+    },
+    components: {
+      location
     },
     methods: {
       getData () {
         ajax.get(this.url)
         .then(res => {
-          this.content = res;
+          this.content = res
         });
       }
-    },
-    components: {
-      location
     }
   }
 </script>
 
 <style lang="scss">
-  .introduction{
-    background: #F4F4F4;
+  .cdu-set{
     width: 80%;
     margin: 0 auto;
-    .content{
-      padding: 1rem;
-      font-size: 1.2rem;
-    }
+    background: #F4F4F4;
   }
 </style>
-

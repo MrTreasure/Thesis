@@ -32,6 +32,9 @@
         ]
       }
     },
+    created () {
+      document.title = '成都大学信息科学与工程学院';
+    },
     components: {
       mySwiper,
       news

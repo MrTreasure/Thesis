@@ -6,6 +6,8 @@ import begin from 'page/begin';
 import CduNews from 'page/CduNews';
 import NewsDetail from 'page/NewsDetail';
 import Introduction from 'page/Introduction';
+import CduSet from 'page/CduSet';
+import CduMajor from 'page/CduMajor';
 import NotFoundComponent from 'page/404';
 
 Vue.use(Router)
@@ -36,6 +38,16 @@ export default new Router({
           path: '/Introduction',
           component: Introduction,
           name: 'Introduction'
+        },
+        {
+          path: '/CduSet',
+          component: CduSet,
+          name: 'CduSet'
+        },
+        {
+          path: '/CduMajor',
+          component: CduMajor,
+          name: 'CduMajor'
         }
       ]
     },
