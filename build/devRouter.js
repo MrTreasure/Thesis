@@ -29,5 +29,22 @@ router.get('/data/info/:name?', (req, res) => {
     res.status(404).send('not found info!');
   }
 });
+router.post('/data/login', (req, res) => {
+  console.log(req.body);
+  if (req.body.username === 'admin' && req.body.userpwd === 'admin') {
+    res.send('right');
+  } else {
+    res.send('wrong');
+  }
+});
+router.post('/data/send', (req, res) => {
+  console.log(req.body);
+  let rand = ~~(Math.random()*10);
+  if (rand >= 5) {
+    res.send('right');
+  } else {
+    res.send('wrong');
+  }
+});
 
 module.exports = router;

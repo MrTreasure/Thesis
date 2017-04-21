@@ -11,6 +11,7 @@ var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev.conf')
+var bodyParser = require('body-parser')
 
 let router = require('./devRouter');
 
@@ -23,6 +24,8 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 app.use(router);
 var compiler = webpack(webpackConfig)
 

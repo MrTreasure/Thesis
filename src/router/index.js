@@ -8,6 +8,8 @@ import NewsDetail from 'page/NewsDetail';
 import Introduction from 'page/Introduction';
 import CduSet from 'page/CduSet';
 import CduMajor from 'page/CduMajor';
+import login from 'page/login';
+import admin from 'page/admin';
 import NotFoundComponent from 'page/404';
 
 Vue.use(Router)
@@ -50,6 +52,24 @@ export default new Router({
           name: 'CduMajor'
         }
       ]
+    },
+    {
+      path: '/login',
+      component: login,
+      name: 'login',
+      meta: {logged: false}
+    },
+    {
+      path: '/admin',
+      component: admin,
+      name: 'admin',
+      beforeEnter: (to, from, next) => {
+        if (from.meta.logged || sessionStorage.getItem('logged')) {
+          next();
+        } else {
+          next({name: 'login'});
+        }
+      }
     },
     {
       path: '*',
