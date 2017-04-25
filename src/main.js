@@ -5,6 +5,7 @@ import axios from 'axios';
 window.axios = axios;
 import App from './App';
 import router from './router';
+require('assets/rest.css');
 require('assets/scss/global.scss');
 
 Vue.config.productionTip = false;

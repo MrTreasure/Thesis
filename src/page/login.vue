@@ -65,6 +65,9 @@
                   this.login.userpwd = '';
                 }, 1000)
               }
+            })
+            .catch(err => {
+              console.log(err);
             });
           }
         } else {

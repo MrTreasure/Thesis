@@ -50,7 +50,7 @@ export default {
             },
             {
               title: '教授介绍',
-              url: '##'
+              url: 'CduTeachers'
             },
             {
               title: '特聘人才',

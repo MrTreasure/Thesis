@@ -8,6 +8,7 @@ import NewsDetail from 'page/NewsDetail';
 import Introduction from 'page/Introduction';
 import CduSet from 'page/CduSet';
 import CduMajor from 'page/CduMajor';
+import Teachers from 'page/Teachers';
 import login from 'page/login';
 import admin from 'page/admin';
 import NotFoundComponent from 'page/404';
@@ -50,6 +51,11 @@ export default new Router({
           path: '/CduMajor',
           component: CduMajor,
           name: 'CduMajor'
+        },
+        {
+          path: '/CduTeachers',
+          component: Teachers,
+          name: 'CduTeachers'
         }
       ]
     },
