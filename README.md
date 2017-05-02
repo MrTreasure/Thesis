@@ -3,6 +3,9 @@
 
 > A Vue.js project
 
+使用MVVM架构重构原jQuery网站
+MOCK服务器使用node搭载在webpack上
+
 ## Build Setup
 
 ``` bash
