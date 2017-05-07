@@ -5,8 +5,11 @@ import axios from 'axios';
 window.axios = axios;
 import App from './App';
 import router from './router';
+import iView from 'iview';
+Vue.use(iView);
 require('assets/rest.css');
 require('assets/scss/global.scss');
+require('iview/dist/styles/iview.css');
 
 Vue.config.productionTip = false;
 

@@ -244,7 +244,7 @@ export default {
       text-align: center;
       border-right: 1px solid #eaeaea;
       width: 100%;
-      transition: all .5s;
+      transition: all .2s;
     }
     &:hover{
       background: #00BFFF;
@@ -272,6 +272,8 @@ export default {
           padding: 0.25rem;
           text-decoration: none;
           color: white;
+          width: 100%;
+          font-size: 0.8rem;
           line-height: 2rem;
           border-top: 1px solid #eaeaea;
           box-sizing: border-box;

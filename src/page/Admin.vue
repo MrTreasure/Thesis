@@ -6,12 +6,13 @@
         <h1 class="title">信息科学与工程学院</h1>
       </div>
     </div>
-    <div class="edit-title">日志抄送界面 <transition name="fade"><span class="info" :class="color" v-if="show">{{backInfo}}</span></transition></div>
+    <div class="edit-title">日志抄送界面</div>
     <div class="infolist">
       <input type="text" placeholder="作者" v-model="author">
       <input type="text" placeholder="描述" v-model="des">
-      <button class="send" @click="send">提交</button>
-      <button class="send" @click="exit">退出登录</button>
+      <Button type="primary" @click="send">提交</Button>
+      <Button type="primary" @click="exit">退出登录</Button>
+      <Checkbox v-model="top"><span>置顶</span></Checkbox>
     </div>
     <div class="editor">
       <quill-editor ref="myTextEditor"
@@ -38,7 +39,8 @@
         des: '',
         backInfo: '发送成功',
         show: false,
-        color: 'green'
+        color: 'green',
+        top: false
       }
     },
     components: {
@@ -50,26 +52,20 @@
           des: this.des,
           author: this.author,
           content: this.content,
+          top: this.top,
           date: new Date()
         };
         console.log(data);
         ajax.post(this.url, data)
         .then(res => {
           if (res === 'right') {
-            console.log(res);
-            this.backInfo = '发送成功';
-            this.color = 'green';
-            this.show = !this.show;
-            setTimeout(() => {
-              this.show = !this.show;
-            }, 2000);
+            this.$Notice.success({
+              title: '发送成功'
+            })
           } else {
-            this.backInfo = '发送失败';
-            this.color = 'red';
-            this.show = !this.show;
-            setTimeout(() => {
-              this.show = !this.show;
-            }, 2000);
+            this.$Notice.error({
+              title: '发送失败'
+            })
           }
         });
       },
@@ -113,31 +109,6 @@
       padding: 2rem;
       font-size: 2rem;
       position: relative;
-      .fade-enter, .fade-leave-active{
-        transition: opacity 1s;
-      }
-      .fade-enter, .fade-leave-active{
-        opacity: 0;
-      }
-      .info{
-        position: absolute;
-        right: 10%;
-        top: 60%;
-        padding: 0.5rem;
-        font-size: 1rem;
-        line-height: 2rem;
-        color: white;
-        border-radius: 5px;
-        height: 2rem;
-        width: 10rem;
-        text-align: center;
-      }
-      .green{
-        background: #1d953f;
-      }
-      .red{
-        background: #ed1941;
-      }
     }
     .infolist{
       padding: 1rem;

@@ -12,6 +12,7 @@ import Teachers from 'page/Teachers';
 import login from 'page/login';
 import admin from 'page/admin';
 import NotFoundComponent from 'page/404';
+import iView from 'page/iView';
 
 Vue.use(Router)
 
@@ -76,6 +77,10 @@ export default new Router({
           next({name: 'login'});
         }
       }
+    },
+    {
+      path: '/back',
+      component: iView
     },
     {
       path: '*',

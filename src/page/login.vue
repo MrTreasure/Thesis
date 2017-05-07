@@ -54,16 +54,18 @@
               if (res === 'right') {
                 this.$route.meta.logged = true;
                 window.sessionStorage.setItem('logged', true);
-                this.$router.push({name: 'admin'});
+                this.$Message.success('登录成功', 3, () => {
+                  this.$router.push({name: 'admin'});
+                });
               } else {
                 this.$refs.head.className += ' warn';
                 this.info = '账户或者密码错误';
-                setTimeout(() => {
+                this.$Message.error('登录失败', 2, () => {
                   this.$refs.head.className = 'login-head';
                   this.info = '';
                   this.login.username = '';
                   this.login.userpwd = '';
-                }, 1000)
+                })
               }
             })
             .catch(err => {

@@ -16,6 +16,9 @@
     <div class="foot-wrapper">
       <foot></foot>
     </div>
+    <Back-top :height="100" :bottom="100">
+      <div class="back-top">返回顶端</div>
+    </Back-top>
   </div>
 </template>
 
@@ -71,6 +74,13 @@ body{
   background: url(~assets/img/bg2.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
+}
+.back-top {
+  padding: 10px;
+  background: rgba(0, 153, 229, .7);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
 }
 .top{
   width: 80%;
