@@ -7,11 +7,11 @@
                     <Submenu name="1">
                         <template slot="title">
                             <Icon type="ios-navigate"></Icon>
-                            导航一
+                            新闻页
                         </template>
-                        <Menu-item name="1-1">选项 1</Menu-item>
-                        <Menu-item name="1-2">选项 2</Menu-item>
-                        <Menu-item name="1-3">选项 3</Menu-item>
+                        <Menu-item name="1-1">学院新闻</Menu-item>
+                        <Menu-item name="1-2">学院新闻</Menu-item>
+                        <Menu-item name="1-3">学院新闻</Menu-item>
                     </Submenu>
                     <Submenu name="2">
                         <template slot="title">
