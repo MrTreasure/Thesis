@@ -6,6 +6,12 @@
 使用MVVM架构重构原jQuery网站
 MOCK服务器使用node搭载在webpack上
 
+## 项目日记
+
+2017年5月8日  完成整体项目
+2017年5月9日  完成毕业论文
+2017年5月11日 完成答辩PPT
+
 ## Build Setup
 
 ``` bash
